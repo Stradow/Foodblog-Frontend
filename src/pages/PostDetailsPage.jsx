@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router";
-import { getPostById } from "../data/posts";
+import { getPostById, deletePost } from "../data/posts";
 
 const PostDetailsPage = () => {
     const [currPost, setCurrPost] = useState({});
@@ -35,6 +35,14 @@ const PostDetailsPage = () => {
                 <div>
                     <h1 className="text-5xl font-bold">{title}</h1>
                     <p className="py-6">{content}</p>
+                </div>
+                <div>
+                    <button onClick={deletePost} className="btn btn-primary">
+                        Delete
+                    </button>
+                    <Link to={`/posts/${postId}/edit`}>
+                        <button className="btn btn-success">Edit</button>
+                    </Link>
                 </div>
             </div>
         </div>
