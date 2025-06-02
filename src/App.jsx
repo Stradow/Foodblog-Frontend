@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import "./index.css";
 // import MainLayout from './layouts/MainLayout';
-// import HomePage from './pages/HomePage';
 import PostDetailsPage from "./pages/PostDetailsPage";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import MainSection from "./components/MainSection";
 
 function App() {
     return (
