@@ -1,8 +1,28 @@
 import CoreConcept from '../components/CoreConcept';
-import posts from '../data/data';
+import { useState, useEffect } from 'react';
+//import posts from '../data/data';
+import { getPosts } from '../data/posts';
 import { Link } from 'react-router';
 
-function MainSection() {
+const MainSection = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    let ignore = false;
+    (async () => {
+      try {
+        const allPosts = await getPosts();
+        if (!ignore) {
+          setPosts(allPosts);
+        }
+      } catch (error) {
+        console.error('Error Found', error);
+      }
+    })();
+    return () => {
+      ignore = true;
+    };
+  }, []);
   return (
     <main className="flex bg-[#F6F2ED] gap-10 py-7 px-10 max-w-[90rem] mx-auto h-[87vh]">
       <section className="flex border-y-10 border-[#FEFCF9] px-10 py-7 w-3/4 bg-[#FEFCF9]  overflow-y-auto rounded-3xl">
@@ -64,6 +84,6 @@ function MainSection() {
       </section>
     </main>
   );
-}
+};
 
 export default MainSection;
