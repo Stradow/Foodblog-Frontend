@@ -23,9 +23,9 @@ const MainLayout = () => {
   //   };
   // }, [postId]);
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="fixed min-h-screen min-w-screen bg-[#F6F2ED] flex flex-col">
       <Header />
-      <main className="flex-grow">
+      <main className="flex">
         {/* pass it to outlet via outlet context */}
         <Outlet />
       </main>
