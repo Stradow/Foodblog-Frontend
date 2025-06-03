@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { updatePost } from '../data/posts';
+import { useParams } from 'react-router';
 
 const EditForm = () => {
-  const [form, setForm] = useState({
+  const {postId} = useParams();
+    const [form, setForm] = useState({
     imgUrl: '',
     title: '',
     content: ''
@@ -22,7 +24,7 @@ const EditForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    updatePost(form.imgUrl, form.title, form.content);
+    updatePost(postId, form);
 
     setForm({
       imgUrl: '',

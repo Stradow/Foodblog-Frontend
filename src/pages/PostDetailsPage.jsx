@@ -33,16 +33,16 @@ const PostDetailsPage = () => {
       <div className="hero-content flex-col lg:flex-row">
         <img src={cover} className="max-w-sm rounded-lg shadow-2xl" />
         <div>
-          <h1 className="text-5xl font-bold">{title}</h1>
-          <p className="py-6">{content}</p>
-        </div>
-        <div>
-          <button onClick={deletePost} className="btn btn-primary">
-            Delete
-          </button>
-          <Link to={`/posts/${postId}/edit`}>
-            <button className="btn btn-success">Edit</button>
-          </Link>
+          <h1 className="text-5xl font-bold max-w-xl">{title}</h1>
+          <p className="py-6 max-w-xl">{content}</p>
+          <div className="flex gap-2">
+            <button onClick={deletePost} className="btn btn-primary">
+              Delete
+            </button>
+            <Link to={`/posts/${postId}/edit`}>
+              <button className="btn btn-success">Edit</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
