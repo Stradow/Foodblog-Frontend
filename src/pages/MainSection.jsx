@@ -28,7 +28,9 @@ const MainSection = () => {
       <section className="flex border-y-10 border-[#FEFCF9] px-10 py-7 w-3/4 bg-[#FEFCF9]  overflow-y-auto rounded-3xl">
         <ul className=" grid grid-cols-2 gap-5 justify-center ">
           {posts.map(post => (
-            <CoreConcept key={post.id} title={post.title} image={post.cover} content={post.content} />
+            <Link key={post.id} to={`/posts/${post.id}`}>
+              <CoreConcept title={post.title} image={post.cover} content={post.content} />
+            </Link>
           ))}
         </ul>
       </section>
