@@ -66,12 +66,13 @@ const EditForm = () => {
         <label className="w-full flex gap-2 items-baseline">
           <span className="text-l">Author:</span>
           <input
+            readOnly
             value={form.author}
             onChange={handleChange}
             name="author"
             type="text"
             placeholder="Edit title..."
-            className="bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
+            className="text-gray-500 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
           />
         </label>
         <label className="w-full flex gap-2 items-baseline">
@@ -99,12 +100,13 @@ const EditForm = () => {
         <label className="w-full flex gap-2 items-baseline">
           <span className="text-l">Cover:</span>
           <input
+            readOnly
             value={form.cover}
             onChange={handleChange}
             name="cover"
             type="text"
             placeholder="Edit content..."
-            className="bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
+            className=" text-gray-500 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
           />
         </label>
         {/* <label className="w-full flex gap-2 items-baseline">
