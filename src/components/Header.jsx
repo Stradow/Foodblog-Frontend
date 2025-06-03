@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Header() {
   return (
     <header className="bg-[#4E4E4C] text-white">
@@ -6,12 +8,14 @@ function Header() {
         <nav>
           <ul className="flex gap-4">
             <li>
-              <button className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition">
-                <a href="/">Home</a>
-              </button>
+              <Link to="/">
+                <button className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition">Home</button>
+              </Link>
             </li>
             <li>
-              <button className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition">Create Post</button>
+              <Link to="/create">
+                <button className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition">Create Post</button>
+              </Link>
             </li>
           </ul>
         </nav>
