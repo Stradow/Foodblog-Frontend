@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainLayout />}>
+        <Route path="/posts" element={<MainLayout />}>
           <Route index element={<MainSection />} />
           <Route path="posts/:postId" element={<PostDetailsPage />} />
           <Route path="posts/:postId/edit" element={<EditForm />} />
