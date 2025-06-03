@@ -1,4 +1,5 @@
 import CoreConcept from '../components/CoreConcept';
+import { useState, useEffect } from "react";
 //import posts from '../data/data';
 import { getPosts } from '../data/posts';
 
