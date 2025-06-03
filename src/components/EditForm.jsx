@@ -4,14 +4,13 @@ import { useParams } from 'react-router';
 import { getPostById } from '../data/posts';
 
 const EditForm = () => {
-  const {postId} = useParams();
-    const [form, setForm] = useState({
+  const { postId } = useParams();
+  const [form, setForm] = useState({
     author: '',
     title: '',
     content: '',
     cover: ''
   });
-
 
   useEffect(() => {
     let ignore = false;
@@ -45,68 +44,66 @@ const EditForm = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    try  {
+    try {
       await updatePost(postId, form);
-
     } catch (error) {
       console.error(error);
     }
 
     setForm({
-      imgUrl: '',
+      author: '',
       title: '',
-      content: ''
+      content: '',
+      cover: ''
     });
   };
 
   return (
     <section className="max-w-3xl ml-5">
-      <h2 className="mb-4 mt-4 font-bold">YOU CAN EDIT THE POST HERE:</h2>
+      <h2 className="mb-4 mt-4 font-bold text-gray-900">YOU CAN EDIT THE POST HERE:</h2>
       <form onSubmit={handleSubmit} id="edit-form" className="flex flex-col gap-4 w-3/4">
         <label className="w-full flex gap-2 items-baseline">
-          <span className="text-l">Author:</span>
+          <span className="text-gray-900 text-l">Author:</span>
           <input
-            readOnly
             value={form.author}
             onChange={handleChange}
             name="author"
             type="text"
             placeholder="Edit title..."
-            className="text-gray-500 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
+            className="text-gray-900 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
           />
         </label>
         <label className="w-full flex gap-2 items-baseline">
-          <span className="text-l">Title:</span>
+          <span className="text-gray-900 text-l">Title:</span>
           <input
             value={form.title}
             onChange={handleChange}
             name="title"
             type="text"
             placeholder="Edit title..."
-            className="bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
+            className="text-gray-900 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
           />
         </label>
         <label className="w-full flex gap-2 items-baseline">
-          <span className="text-l">Content:</span>
+          <span className="text-gray-900 text-l">Content:</span>
           <input
             value={form.content}
             onChange={handleChange}
             name="content"
             type="text"
             placeholder="Edit content..."
-            className="bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
+            className="text-gray-900 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
           />
         </label>
         <label className="w-full flex gap-2 items-baseline">
-          <span className="text-l">Cover:</span>
+          <span className="text-gray-900 text-l">Cover:</span>
           <input
-            readOnly
             value={form.cover}
             onChange={handleChange}
             name="cover"
             type="text"
             placeholder="Edit content..."
-            className=" text-gray-500 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
+            className=" text-gray-900 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
           />
         </label>
         {/* <label className="w-full flex gap-2 items-baseline">
