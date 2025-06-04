@@ -17,7 +17,7 @@ function CreatePost() {
     };
 
     try {
-      const res = await fetch('http://localhost:5174/posts', {
+      const res = await fetch('https://foodblog-backend-dwk1.onrender.com/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
