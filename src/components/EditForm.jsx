@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { updatePost } from '../data/posts';
 import { useParams } from 'react-router';
 import { getPostById } from '../data/posts';
+import { useNavigate } from 'react-router';
 
 const EditForm = () => {
+  const navigate = useNavigate();
   const { postId } = useParams();
   const [form, setForm] = useState({
     author: '',
@@ -38,8 +40,13 @@ const EditForm = () => {
     e.preventDefault();
     try {
       await updatePost(postId, form);
+      alert('Post succesfully updated!');
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
     } catch (error) {
       console.error(error);
+      alert('Failed to update post!');
     }
 
     setForm({
