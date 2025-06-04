@@ -9,12 +9,16 @@ function Header() {
           <ul className="flex gap-4">
             <li>
               <Link to="/">
-                <button className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition">Home</button>
+                <button className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition cursor-pointer">
+                  Home
+                </button>
               </Link>
             </li>
             <li>
               <Link to="/create">
-                <button className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition">Create Post</button>
+                <button className="bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition cursor-pointer">
+                  Create Post
+                </button>
               </Link>
             </li>
           </ul>

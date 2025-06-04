@@ -28,7 +28,14 @@ const MainSection = () => {
         <ul className=" grid grid-cols-2 gap-5 justify-center ">
           {posts.map(post => (
             <Link key={post.id} to={`/posts/${post.id}`}>
-              <CoreConcept title={post.title} image={post.cover} content={post.content} author={post.author} date={post.createdAt}/>
+              <CoreConcept
+                key={post.id}
+                title={post.title}
+                image={post.cover}
+                content={post.content}
+                author={post.author}
+                date={post.createdAt}
+              />
             </Link>
           ))}
         </ul>
@@ -70,7 +77,7 @@ const MainSection = () => {
         </div>
         <Link to={`/create`}>
           <button>
-            <div className="p-8 bg-[#FEFCF9] rounded-3xl flex-1  text-black text-2xl/7 font-bold hover:cursor-pointer hover:bg-[#A6A6A5] hover:text-white duration-400">
+            <div className="p-8 bg-[#FEFCF9] rounded-3xl flex-1  text-black text-2xl/7 font-bold hover:cursor-pointer hover:bg-[#e7e5e2] duration-400">
               <div className="w-full h-full mb-7">
                 <img
                   src="https://img.icons8.com/?size=1000&id=oqWjYJSQSZAj&format=png&color=DE3031"
