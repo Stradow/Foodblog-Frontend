@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router';
 import { getPostById, deletePost } from '../data/posts';
-// import posts from '../data/data';
 
 const PostDetailsPage = () => {
   const [currPost, setCurrPost] = useState({});
