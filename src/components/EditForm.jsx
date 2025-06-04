@@ -13,7 +13,6 @@ const EditForm = () => {
     content: '',
     cover: ''
   });
-  const navigate = useNavigate();
 
   useEffect(() => {
     let ignore = false;
