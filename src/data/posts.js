@@ -35,4 +35,4 @@ const deletePost = async postId => {
   if (!res.ok) throw new Error(`${res.status}. Something went wrong!`);
 };
 
-export { getPosts, getPostById, updatePost, deletePost };
+export { getPosts, getPostById, updatePost, deletePost, baseURL };

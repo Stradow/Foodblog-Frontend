@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { baseURL } from '../data/posts';
 
 function CreatePost() {
   const [author, setAuthor] = useState('');
@@ -19,7 +20,7 @@ function CreatePost() {
     };
 
     try {
-      const res = await fetch('https://foodblog-backend-dwk1.onrender.com/posts', {
+      const res = await fetch(baseURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
