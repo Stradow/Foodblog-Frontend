@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 function CreatePost() {
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [cover, setCover] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -27,7 +29,10 @@ function CreatePost() {
 
       if (!res.ok) throw new Error('Failed to create post');
       const data = await res.json();
-      console.log('Post created:', data);
+      alert('Post succesfully created!');
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
     } catch (err) {
       console.error(err.message);
     }
