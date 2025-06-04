@@ -1,6 +1,5 @@
 import CoreConcept from '../components/CoreConcept';
 import { useState, useEffect } from 'react';
-//import posts from '../data/data';
 import { getPosts } from '../data/posts';
 import { Link } from 'react-router';
 
@@ -29,7 +28,14 @@ const MainSection = () => {
         <ul className=" grid grid-cols-2 gap-5 justify-center ">
           {posts.map(post => (
             <Link key={post.id} to={`/posts/${post.id}`}>
-              <CoreConcept title={post.title} image={post.cover} content={post.content} />
+              <CoreConcept
+                key={post.id}
+                title={post.title}
+                image={post.cover}
+                content={post.content}
+                author={post.author}
+                date={post.createdAt}
+              />
             </Link>
           ))}
         </ul>
