@@ -28,7 +28,14 @@ const MainSection = () => {
         <ul className=" grid grid-cols-2 gap-5 justify-center ">
           {posts.map(post => (
             <Link key={post.id} to={`/posts/${post.id}`}>
-              <CoreConcept title={post.title} image={post.cover} content={post.content} />
+              <CoreConcept
+                key={post.id}
+                title={post.title}
+                image={post.cover}
+                content={post.content}
+                author={post.author}
+                date={post.createdAt}
+              />
             </Link>
           ))}
         </ul>
