@@ -39,7 +39,7 @@ function CreatePost() {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-10 bg-white rounded-2xl shadow-md p-6">
+    <div className="max-w-xl mx-auto mt-10 bg-white w-1/3 rounded-2xl shadow-md p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Create Post</h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">

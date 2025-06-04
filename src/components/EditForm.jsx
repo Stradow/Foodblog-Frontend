@@ -5,6 +5,7 @@ import { getPostById } from '../data/posts';
 import { useNavigate } from 'react-router';
 
 const EditForm = () => {
+  const navigate = useNavigate();
   const { postId } = useParams();
   const [form, setForm] = useState({
     author: '',
