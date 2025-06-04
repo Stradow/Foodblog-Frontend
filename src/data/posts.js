@@ -1,5 +1,4 @@
 const API_URL = import.meta.env.VITE_FOODBLOG_URL;
-// const API_URL = 'https://foodblog-backend-dwk1.onrender.com';
 
 const baseURL = `${API_URL}/posts`;
 
