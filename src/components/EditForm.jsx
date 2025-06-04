@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { updatePost } from '../data/posts';
 import { useParams } from 'react-router';
 import { getPostById } from '../data/posts';
+import { useNavigate } from 'react-router';
 
 const EditForm = () => {
   const { postId } = useParams();
@@ -11,6 +12,7 @@ const EditForm = () => {
     content: '',
     cover: ''
   });
+  const navigate = useNavigate();
 
   useEffect(() => {
     let ignore = false;
@@ -38,8 +40,13 @@ const EditForm = () => {
     e.preventDefault();
     try {
       await updatePost(postId, form);
+      alert('Post succesfully updated!');
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
     } catch (error) {
       console.error(error);
+      alert('Failed to update post!');
     }
 
     setForm({
@@ -62,7 +69,7 @@ const EditForm = () => {
             onChange={handleChange}
             name="author"
             type="text"
-            placeholder="Edit title..."
+            placeholder="Edit author..."
             className="text-gray-900 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
           />
         </label>
@@ -95,7 +102,7 @@ const EditForm = () => {
             onChange={handleChange}
             name="cover"
             type="text"
-            placeholder="Edit content..."
+            placeholder="Edit cover..."
             className=" text-gray-900 bg-inherit border-solid border-2 border-slate-700 rounded-lg p-2 grow"
           />
         </label>
